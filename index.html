@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#20282C" name="theme-color"/><title>Great Western Hospital CYP | Maybo</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;display=swap" rel="stylesheet"/><style>
+:root{--orange:#F47321;--orange2:#D95D0B;--ink:#20282C;--muted:#667177;--warm:#F7F7F5;--line:#DFE3E5;--white:#fff}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Lato,Arial,sans-serif;background:#111;color:var(--ink)}
+body{overflow:hidden}.deck{height:100vh;width:100vw;position:relative}.slide{position:absolute;inset:0;background:linear-gradient(135deg,#fff 0%,#fff 65%,#fff5ee 100%);padding:5.2vh 6vw 8vh;opacity:0;transform:translateX(40px);pointer-events:none;transition:.35s ease;overflow:auto}
+.slide.active{opacity:1;transform:none;pointer-events:auto}.slide-no{position:absolute;right:2.2vw;top:2.2vh;font-size:12px;font-weight:900;letter-spacing:.18em;color:#9da2a5}.content{width:min(1180px,100%);height:100%;margin:auto;display:flex;flex-direction:column;justify-content:center}.content.narrow{max-width:930px}.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:var(--orange);margin-bottom:14px}.slide h1{font-size:clamp(34px,5vw,68px);line-height:.98;letter-spacing:-.04em;margin:0 0 22px}.lead{font-size:clamp(20px,2.2vw,30px);line-height:1.4;color:var(--muted);max-width:900px}
+.cover{background:linear-gradient(120deg,#182126,#2B353A 70%,#44271B);color:white}.cover-grid{width:min(1180px,100%);height:100%;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:50px}.cover h1{font-size:clamp(48px,7vw,96px);max-width:850px}.cover h2{font-size:clamp(22px,2.7vw,38px);margin:0 0 24px;color:#f7b58c}.cover p{font-size:clamp(18px,1.8vw,24px);color:#d7dcdf;max-width:760px}.cover-logo{width:min(360px,70%);justify-self:end;filter:brightness(0) invert(1)}
+.outcomes{display:grid;grid-template-columns:1fr 1fr;gap:22px}.outcomes div{background:var(--ink);color:var(--orange);border-radius:24px;padding:30px;font-size:54px;font-weight:900}.outcomes span{display:block;color:white;font-size:20px;line-height:1.35;margin-top:18px;font-weight:700}
+.visual{display:grid;gap:18px;min-height:0;align-items:center}.visual.single{grid-template-columns:1fr}.visual.two{grid-template-columns:1fr 1fr}.visual.three{grid-template-columns:repeat(3,1fr)}.visual img{width:100%;height:min(62vh,560px);object-fit:contain;border-radius:16px;background:white;border:1px solid var(--line);box-shadow:0 18px 44px rgba(0,0,0,.08)}
+.video-wrap{position:relative;width:min(100%,1000px);aspect-ratio:16/9;border-radius:22px;overflow:hidden;box-shadow:0 22px 55px rgba(0,0,0,.18);background:#000}.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.placeholder-slide{background:radial-gradient(circle at 85% 20%,rgba(244,115,33,.2),transparent 28%),linear-gradient(135deg,#f7f7f5,#fff)}.placeholder-card{border:2px dashed #c7cbcd;border-radius:26px;padding:34px;display:grid;grid-template-columns:72px 1fr;align-items:center;gap:24px;color:var(--muted);font-size:21px}.placeholder-icon{width:64px;height:64px;border-radius:18px;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:38px;font-weight:300}
+.section-slide{background:linear-gradient(120deg,#1B2327,#323B3F);color:white}.section-slide .lead{color:#d3d8da}.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.pills span{padding:12px 16px;border-radius:999px;background:rgba(244,115,33,.16);border:1px solid rgba(244,115,33,.55);color:#ffc49d;font-weight:900}
+.summary-slide{background:linear-gradient(135deg,#fff,#fff4ec)}.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:24px}.summary-grid div{background:white;border:1px solid var(--line);border-radius:18px;padding:20px}.summary-grid strong{display:block;color:var(--orange2);font-size:18px}.summary-grid span{display:block;color:var(--muted);margin-top:6px}
+.controls{position:fixed;z-index:10;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;background:rgba(20,24,26,.92);padding:10px 12px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.22);backdrop-filter:blur(10px)}.controls button{border:0;background:transparent;color:white;font:900 14px Lato,Arial;cursor:pointer;padding:9px 13px;border-radius:999px}.controls button:hover{background:rgba(255,255,255,.1)}.controls button:disabled{opacity:.35;cursor:default}.counter{min-width:72px;text-align:center;color:#ddd;font-size:13px}.progress{position:fixed;z-index:11;bottom:0;left:0;height:4px;background:var(--orange);width:0;transition:.25s}.brand-mini{position:fixed;z-index:9;left:18px;bottom:17px;background:white;border-radius:12px;padding:8px 10px;box-shadow:0 8px 24px rgba(0,0,0,.12)}.brand-mini img{width:110px;display:block}
+@media(max-width:800px){.slide{padding:7vh 5vw 11vh}.cover-grid{grid-template-columns:1fr}.cover-logo{display:none}.visual.two,.visual.three,.outcomes,.summary-grid{grid-template-columns:1fr}.visual img{height:auto;max-height:42vh}.content{justify-content:flex-start;padding-top:7vh}.controls{bottom:10px}.brand-mini{display:none}}
+@media print{body{overflow:visible}.deck{height:auto}.slide{position:relative;opacity:1!important;transform:none!important;pointer-events:auto;min-height:100vh;page-break-after:always}.controls,.progress,.brand-mini{display:none}}
+
+.question-slide{background:radial-gradient(circle at 82% 18%,rgba(244,115,33,.16),transparent 28%),linear-gradient(135deg,#fff,#fff7f1)}
+.question-number{width:74px;height:74px;border-radius:22px;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:900;margin:8px 0 26px}
+.question-slide h1{font-size:clamp(36px,5.2vw,70px);line-height:1.08;max-width:1050px}
+.question-prompt{font-size:clamp(17px,1.7vw,22px);color:var(--muted);margin-top:16px;max-width:800px}
+
+.mh-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:26px;align-items:start}.mh-lead p{font-size:22px;line-height:1.45;color:var(--muted);margin:0}.mh-callout{margin-top:24px;padding:22px;border-radius:18px;background:var(--ink);color:white;font-size:22px;font-weight:900}.mh-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mh-cards>div{padding:18px;border:1px solid var(--line);border-radius:16px;background:white}.mh-cards strong{display:block;color:var(--orange2);font-size:17px}.mh-cards span{display:block;color:var(--muted);font-size:14px;line-height:1.35;margin-top:6px}.source-note{margin-top:16px;font-size:12px;color:#8a9195}
+.trauma-frame{display:grid;grid-template-columns:.72fr 1.28fr;gap:28px;align-items:stretch}.trauma-question{display:flex;align-items:center;background:var(--ink);color:white;border-radius:24px;padding:30px;font-size:clamp(28px,3vw,42px);font-weight:900;line-height:1.1}.trauma-points{display:grid;gap:12px}.trauma-points>div{position:relative;background:white;border:1px solid var(--line);border-radius:18px;padding:18px 18px 18px 68px}.trauma-points span{position:absolute;left:18px;top:18px;width:34px;height:34px;border-radius:10px;background:var(--orange);color:white;display:grid;place-items:center;font-weight:900}.trauma-points strong{display:block;font-size:18px}.trauma-points p{margin:5px 0 0;color:var(--muted);font-size:15px;line-height:1.35}
+.local-video-wrap{width:min(100%,1000px);aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 22px 55px rgba(0,0,0,.18)}.local-video-wrap video{width:100%;height:100%;display:block;background:#000}.video-caption{max-width:980px;color:var(--muted);font-size:17px;margin:14px 0 0}
+.kaplan-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:center}.kaplan-chart{background:white;border:1px solid var(--line);border-radius:22px;padding:12px;box-shadow:0 16px 38px rgba(0,0,0,.06)}.kaplan-chart svg{width:100%;height:auto;display:block}.impact-line{font-size:clamp(30px,3.5vw,48px);line-height:1.02;font-weight:900;color:var(--ink)}.impact-line span{color:var(--orange2)}.kaplan-copy>p{font-size:18px;line-height:1.45;color:var(--muted)}.reflect-box{background:#fff5ee;border:1px solid #ffd6bd;border-radius:18px;padding:18px}.reflect-box strong{color:var(--orange2)}.reflect-box ul{margin:10px 0 0;padding-left:20px;color:#50595e}.reflect-box li{margin:7px 0}
+@media(max-width:850px){.mh-grid,.trauma-frame,.kaplan-layout{grid-template-columns:1fr}.mh-cards{grid-template-columns:1fr}.kaplan-chart{order:2}.kaplan-copy{order:1}}
+
+.slide::after{
+  content:"© Maybo Ltd. All rights reserved.";
+  position:absolute;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+  font-size:11px;
+  line-height:1;
+  color:#8A9195;
+  letter-spacing:.02em;
+  white-space:nowrap;
+  pointer-events:none;
+}
+.cover::after,.section-slide::after{color:rgba(255,255,255,.65);}
+@media(max-width:800px){.slide::after{bottom:8px;font-size:9px;}}
+@media print{.slide::after{display:block;}}
+
+/* Added eating disorder / self-harm reflective practice slides */
+.added-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.added-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 14px 34px rgba(32,40,44,.08)}
+.added-card h2{font-size:1.18rem;margin:0 0 10px;color:var(--orange2);line-height:1.15}
+.added-card p{font-size:1.05rem;margin:0;color:var(--muted)}
+.added-card ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:1.02rem}
+.added-card li{margin:.35rem 0}
+.theory-note{margin-top:22px;background:#20282C;color:#fff;border-left:6px solid var(--orange);border-radius:0 18px 18px 0;padding:20px 24px;font-size:1.18rem;line-height:1.45}
+.scenario-box{background:#fff;border-left:8px solid var(--orange);border-radius:0 24px 24px 0;padding:30px 34px;box-shadow:0 16px 40px rgba(32,40,44,.10);font-size:1.55rem;line-height:1.35}
+.scenario-box em{color:var(--orange2);font-style:normal;font-weight:900}
+.feeling-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.feeling-row span{background:#fff0e6;border:1px solid #ffd1b6;color:#20282C;border-radius:999px;padding:10px 15px;font-weight:900}
+.added-takeaway{margin-top:22px;background:#20282C;color:#fff;border-radius:20px;padding:22px 26px;font-size:1.22rem;line-height:1.42}
+.two-added{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:start}
+.self-harm-list{columns:2;column-gap:30px;margin:0;padding-left:1.1rem;font-size:1rem;color:var(--muted)}
+.self-harm-list li{break-inside:avoid;margin:0 0 .46rem}
+.cycle-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:26px 0 20px}
+.cycle-row div{min-height:100px;background:#fff;border:1px solid var(--line);border-radius:16px;display:grid;place-items:center;text-align:center;padding:12px;font-weight:900;color:#20282C}
+.cycle-row div:nth-child(even){background:#fff0e6}
+.big-question{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px 30px;box-shadow:0 14px 34px rgba(32,40,44,.08);font-size:1.35rem;line-height:1.35}
+.big-question strong{color:var(--orange2)}
+@media(max-width:900px){.added-cards,.two-added,.cycle-row{grid-template-columns:1fr}.self-harm-list{columns:1}.scenario-box{font-size:1.2rem}}
+
+
+.learning-cycle-slide h1{color:var(--orange2);font-size:clamp(28px,3.3vw,46px);margin-bottom:18px}
+.learning-cycle-visual img{height:min(67vh,610px);border:0;box-shadow:none;background:transparent;border-radius:0}
+</style></head><body><main class="deck">
+<section class="slide cover"><div class="slide-no">1</div><div class="cover-grid"><div><div class="eyebrow">Maybo × Great Western Hospital</div><h1>Supporting Children &amp; Young People</h1><h2>Great Western Hospital Medical Staff</h2><p>A concise Maybo learning workshop for clinicians, including consultants, working with children and young people.</p></div><img alt="Maybo" class="cover-logo" src="assets/maybo-logo.png"/></div></section>
+<section class="slide"><div class="slide-no">2</div><div class="content"><div class="eyebrow">Purpose</div><h1>Learning outcomes</h1><div class="outcomes"><div>01<span>Understand the factors that may cause a young person’s behaviour to escalate</span></div><div>02<span>Know how to use de-escalation strategies</span></div></div></div></section>
+<section class="slide question-slide"><div class="slide-no">3</div><div class="content narrow"><div class="eyebrow">Personal risks | Exercise</div><div class="question-number">01</div><h1>When do you feel more at risk or vulnerable in your workplace — for example, particular tasks, activities or places?</h1><p class="question-prompt">Discuss with the group and consider examples from your own clinical setting.</p></div></section>
+<section class="slide question-slide"><div class="slide-no">4</div><div class="content narrow"><div class="eyebrow">Personal risks | Exercise</div><div class="question-number">02</div><h1>What are the behaviours of concern that you find most difficult to deal with?</h1><p class="question-prompt">Discuss with the group and consider examples from your own clinical setting.</p></div></section>
+<section class="slide"><div class="slide-no">5</div><div class="content"><div class="eyebrow">There is always a reason for behaviour that challenges</div><h1>Functions of behaviour</h1><div class="visual single"><img alt="Functions of behaviour" src="assets/image5.png"/></div></div></section>
+<section class="slide"><div class="slide-no">6</div><div class="content"><div class="eyebrow">Behaviour may communicate an unmet need</div><h1>Look behind the behaviour</h1><div class="visual single"><img alt="Look behind the behaviour" src="assets/image6.png"/></div></div></section>
+<section class="slide trauma-slide"><div class="slide-no">7</div><div class="content"><div class="eyebrow">A brief lens before the video</div><h1>Trauma, shame and what we see</h1>
+<div class="trauma-frame">
+<div class="trauma-question">What might this behaviour be protecting the young person from?</div>
+<div class="trauma-points">
+<div><span>01</span><strong>Past experience changes the present</strong><p>A routine examination, request or loss of control can carry a different meaning for someone with a history of trauma.</p></div>
+<div><span>02</span><strong>Shame can drive behaviour</strong><p>Withdrawal, hostility, refusal or apparent indifference may be ways of managing an intensely uncomfortable internal state.</p></div>
+<div><span>03</span><strong>Our response becomes part of the experience</strong><p>Calm, dignity, choice and explanation can reduce threat; pressure or insensitivity can add to it.</p></div>
+</div>
+</div>
+</div></section>
+<section class="slide tony-slide"><div class="slide-no">8</div><div class="content"><div class="eyebrow">Trauma-informed practice</div><h1>Shame — Tony France</h1>
+<div class="local-video-wrap">
+<video controls="" poster="assets/tony-shame-poster.png" preload="metadata">
+<source src="assets/tony-shame.mp4" type="video/mp4"/>
+    Your browser does not support embedded video.
+  </video>
+</div>
+<p class="video-caption">Tony France on shame — consider what shame can look like from the outside, and how our response may influence what happens next.</p>
+</div></section>
+<section class="slide mh-slide"><div class="slide-no">9</div><div class="content"><div class="eyebrow">Look beyond the presenting task</div><h1>What else might be going on?</h1>
+<div class="mh-grid">
+<div class="mh-lead">
+<p>A young person may be in hospital for a physical health reason while also coping with distress that changes how they communicate, tolerate care or respond to people around them.</p>
+<div class="mh-callout">The behaviour you see may not be about the task you are there to complete.</div>
+</div>
+<div class="mh-cards">
+<div><strong>Anxious or distressed feelings</strong><span>Fear, uncertainty, loss of control or overwhelm.</span></div>
+<div><strong>Self-injurious behaviour</strong><span>Current or recent self-harm may sit alongside the medical presentation.</span></div>
+<div><strong>Mental ill health</strong><span>Distress or illness may be masked, overlooked or difficult to express.</span></div>
+<div><strong>Substance use</strong><span>Intoxication, withdrawal or related distress can affect presentation and risk.</span></div>
+<div><strong>Trauma and shame</strong><span>Past experiences can shape how a young person reads our words, tone and actions.</span></div>
+<div><strong>Learning, communication or sensory needs</strong><span>Understanding and expression may require more time, adaptation and checking.</span></div>
+</div>
+</div>
+<div class="source-note">Acute mental-health guidance emphasises that physical and mental-health needs can occur together and that distress, self-harm, substance misuse and learning needs may be relevant in acute hospital care.</div>
+</div></section>
+<section class="slide"><div class="slide-no">10</div><div class="content"><div class="eyebrow">Clinical holding context</div><h1>Eating disorders</h1><div class="visual single"><img alt="" src="assets/image16.png"/></div></div></section>
+<section class="slide"><div class="slide-no">11</div><div class="content"><div class="eyebrow">Clinical holding context</div><h1>Eating disorders</h1><div class="visual single"><img alt="" src="assets/image15.png"/></div></div></section>
+<section class="slide"><div class="slide-no">12</div><div class="content"><div class="eyebrow">Think about what the behaviour is achieving</div><h1>To escape or acquire</h1><div class="visual single"><img alt="" src="assets/image17.png"/></div></div></section>
+<section class="slide"><div class="slide-no">13</div><div class="content"><div class="eyebrow">Think about what the behaviour is achieving</div><h1>To escape or acquire</h1><div class="visual single"><img alt="" src="assets/image18.png"/></div></div></section>
+<section class="slide"><div class="slide-no">14</div><div class="content"><div class="eyebrow">Risk behaviour • Function • Triggers &amp; antecedents • Patterns</div><h1>Understanding challenging behaviour</h1><div class="visual single"><img alt="Understanding challenging behaviour" src="assets/image19.png"/></div></div></section>
+<section class="slide"><div class="slide-no">15</div><div class="content"><div class="eyebrow">Consider what increases the likelihood of escalation</div><h1>Triggers</h1><div class="visual single"><img alt="" src="assets/image20.png"/></div></div></section>
+<section class="slide"><div class="slide-no">16</div><div class="content"><div class="eyebrow">Consider what increases the likelihood of escalation</div><h1>Triggers</h1><div class="visual single"><img alt="" src="assets/image21.png"/></div></div></section>
+<section class="slide"><div class="slide-no">17</div><div class="content"><div class="eyebrow">Triggers and inhibitors can differ from adults</div><h1>Children &amp; young people</h1><div class="visual single"><img alt="" src="assets/image22.png"/></div></div></section>
+<section class="slide"><div class="slide-no">18</div><div class="content"><div class="eyebrow">Triggers and inhibitors can differ from adults</div><h1>Children &amp; young people</h1><div class="visual single"><img alt="" src="assets/image23.png"/></div></div></section>
+<section class="slide"><div class="slide-no">19</div><div class="content"><div class="eyebrow">Our responses can influence the next response</div><h1>Attitude &amp; behaviour cycle</h1><div class="visual single"><img alt="Attitude &amp; behaviour cycle" src="assets/updated-slide-26.png"/></div></div></section>
+<section class="slide"><div class="slide-no">20</div><div class="content"><div class="eyebrow">Break the cycle</div><h1>Attitude &amp; behaviour cycle</h1><div class="visual single"><img alt="Attitude &amp; behaviour cycle" src="assets/updated-slide-27.png"/></div></div></section>
+<section class="slide kaplan-slide"><div class="slide-no">21</div><div class="content"><div class="eyebrow">Reflection for medical staff</div><h1>A brief interaction can have a longer impact</h1>
+<div class="kaplan-layout">
+<div class="kaplan-chart">
+<svg aria-label="Arousal curve showing a brief medical interaction and a longer period of impact" role="img" viewbox="0 0 900 430">
+<defs>
+<marker id="arrowhead" markerheight="7" markerwidth="10" orient="auto" refx="8" refy="3.5">
+<polygon fill="#F47321" points="0 0, 10 3.5, 0 7"></polygon>
+</marker>
+</defs>
+<line stroke="#AAB0B3" stroke-width="2" x1="70" x2="850" y1="355" y2="355"></line>
+<line stroke="#AAB0B3" stroke-width="2" x1="70" x2="70" y1="355" y2="55"></line>
+<text fill="#687177" font-size="20" font-weight="700" transform="rotate(-90 28 210)" x="28" y="210">Arousal / distress</text>
+<text fill="#687177" font-size="20" font-weight="700" x="430" y="404">Time</text>
+<path d="M80,332 C180,330 220,315 285,255 C340,205 360,115 445,92 C515,73 560,145 590,205 C620,260 660,306 835,330" fill="none" stroke="#20282C" stroke-linecap="round" stroke-width="8"></path>
+<line stroke="#F47321" stroke-dasharray="10 8" stroke-width="4" x1="365" x2="365" y1="68" y2="355"></line>
+<line stroke="#F47321" stroke-dasharray="10 8" stroke-width="4" x1="492" x2="492" y1="68" y2="355"></line>
+<rect fill="#F47321" height="40" rx="20" width="127" x="365" y="25"></rect>
+<text fill="white" font-size="18" font-weight="900" text-anchor="middle" x="428.5" y="52">Medic contact</text>
+<path d="M500,165 C585,145 674,160 760,218" fill="none" marker-end="url(#arrowhead)" stroke="#F47321" stroke-width="4"></path>
+<text fill="#D95D0B" font-size="18" font-weight="900" text-anchor="middle" x="620" y="138">Impact can continue</text>
+<text fill="#687177" font-size="17" x="133" y="320">baseline</text>
+<text fill="#687177" font-size="17" x="300" y="180">escalation</text>
+<text fill="#687177" font-size="17" x="444" y="82">high arousal</text>
+<text fill="#687177" font-size="17" x="675" y="306">recovery</text>
+</svg>
+</div>
+<div class="kaplan-copy">
+<div class="impact-line">Your contact may be brief.<br/><span>Its impact may not be.</span></div>
+<p>A task-focused interaction can end for the medic while the young person is still processing what happened — and ward colleagues remain alongside them.</p>
+<div class="reflect-box">
+<strong>Before you leave, ask yourself:</strong>
+<ul>
+<li>What state was the young person in when I arrived?</li>
+<li>What state might they be in when I leave?</li>
+<li>What might colleagues need to manage afterwards?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="source-note">Adapted as a reflective teaching visual from the Kaplan &amp; Wheeler arousal-cycle concept.</div>
+</div></section>
+<section class="slide added-medic-view"><div class="slide-no">22</div><div class="content"><div class="eyebrow">Reflective practice</div><h1>How might a young person view a medic?</h1><div class="added-cards"><div class="added-card"><h2>Possible perception</h2><p>A young person may experience medics as powerful or controlling because they are making decisions about treatment, including diet and food intake.</p></div><div class="added-card"><h2>Why this matters</h2><p>Changes to diet can feel highly anxiety-provoking. A brief or dismissive interaction may leave them feeling unheard, powerless, out of control and less involved in care.</p></div><div class="added-card"><h2>Possible impact</h2><p>They may try to regain control through further eating disorder behaviours, or be less likely to follow a plan that feels imposed on them.</p></div></div><div class="theory-note"><strong>Link to theory:</strong> this connects to the attitude and behaviour cycle. Staff attitudes and behaviours can influence the young person’s attitude and response, escalating or de-escalating the situation.</div></div></section>
+<section class="slide added-position"><div class="slide-no">23</div><div class="content narrow"><div class="eyebrow">Perspective-taking</div><h1>Put yourself in the young person’s position…</h1><div class="scenario-box">Imagine being told: <em>“You’re going to take this medication, and there’s nothing you can do about it.”</em><br/><br/>You don’t believe you need it. You don’t want to take it. But the decision has been made for you.<br/><br/><strong>How might that make you feel?</strong><div class="feeling-row"><span>Powerless</span><span>Anxious</span><span>Angry</span><span>Frightened</span><span>Unheard</span><span>Out of control</span></div></div></div></section>
+<section class="slide added-voice"><div class="slide-no">24</div><div class="content narrow"><div class="eyebrow">Necessary decisions still need compassionate communication</div><h1>Give voice, even when the outcome cannot change</h1><div class="added-takeaway">How we communicate a necessary treatment decision can be just as important as the decision itself. We may not always be able to give the young person the outcome they want, but we can still give them a voice, listen to their concerns, explain decisions and offer meaningful choices wherever possible.</div></div></section>
+<section class="slide added-self-harm"><div class="slide-no">25</div><div class="content"><div class="eyebrow">Self-harm</div><h1>Looking beyond the behaviour</h1><div class="two-added"><div class="added-card"><h2>“Are they just doing it for attention?”</h2><p>Self-harm should not be dismissed as simply attention-seeking. Even when someone is trying to communicate distress or seek attention, consider how difficult things must feel for this to seem like the only way they can show that they need help.</p><p style="margin-top:14px">They may not yet have the words, confidence, relationships or alternative coping strategies to ask for help in another way.</p></div><div class="added-card"><h2>Why might someone self-harm?</h2><ul class="self-harm-list"><li>Cope with overwhelming emotional distress</li><li>Regulate or release intense emotions</li><li>Express feelings that are difficult to put into words</li><li>Create a sense of control</li><li>Cope with numbness or disconnection</li><li>Punish themselves because of guilt, shame or low self-worth</li><li>Manage traumatic experiences or painful memories</li><li>Communicate distress or a need for support</li><li>Cope with interpersonal difficulties, rejection or conflict</li><li>Temporarily distract from emotional pain</li></ul></div></div><div class="theory-note">Self-harm does <strong>not necessarily</strong> mean that someone is trying to end their life, although suicidal thoughts and risk should always be taken seriously.</div></div></section>
+<section class="slide added-healthcare"><div class="slide-no">26</div><div class="content narrow"><div class="eyebrow">Accessing healthcare after self-harm</div><h1>Attitudes can be communicated through behaviour</h1><div class="big-question">Someone requiring treatment after self-harm may already feel <strong>ashamed, frightened, vulnerable or worthless</strong>.<br/><br/>Now imagine encountering a professional whose words, tone or body language communicate: <strong>“Why should I help you? You did this to yourself.”</strong><br/><br/>Even when those words are never spoken, attitudes can still be communicated through our behaviour.</div></div></section>
+<section class="slide added-cycle"><div class="slide-no">27</div><div class="content"><div class="eyebrow">What impact will your interaction have?</div><h1>Our response can become part of the cycle</h1><div class="big-question">Ask yourself: <strong>When this young person leaves my care, will my interaction have helped them feel more worthy of care and support — or less?</strong></div><div class="cycle-row"><div>Distress</div><div>Self-harm</div><div>Healthcare contact</div><div>Our response</div><div>How they feel about themselves</div><div>What they do when distress returns</div></div><div class="theory-note">The aim is not to approve of the behaviour. It is to understand the distress behind it and respond to the person with dignity, curiosity and compassion.</div></div></section>
+<section class="slide"><div class="slide-no">28</div><div class="content"><div class="eyebrow">Stimulus and response | De-escalation examples</div><h1>Choice model</h1><div class="visual single"><img alt="Choice model" src="assets/choice-model-1.png"/></div></div></section>
+<section class="slide"><div class="slide-no">29</div><div class="content"><div class="eyebrow">Stimulus and response | Escalation examples</div><h1>Choice model</h1><div class="visual single"><img alt="Choice model" src="assets/choice-model-2.png"/></div></div></section>
+<section class="slide"><div class="slide-no">30</div><div class="content"><div class="eyebrow">Summary</div><h1>Positive approaches to behaviour</h1><div class="visual single"><img alt="Positive approaches to behaviour" src="assets/pab-summary.png"/></div></div></section>
+<section class="slide"><div class="slide-no">31</div><div class="content"><div class="eyebrow">Video</div><h1>Behaviour breeds behaviour</h1><div class="video-wrap"><iframe allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" src="https://player.vimeo.com/video/832383570?title=0&amp;byline=0&amp;portrait=0" title="Behaviour breeds behaviour"></iframe></div></div></section>
+<section class="slide section-slide"><div class="slide-no">32</div><div class="content narrow"><div class="eyebrow">De-escalation</div><h1>Open PALMS</h1><p class="lead">A person-centred approach: be mindful, reduce triggers, defuse, calm and resolve.</p><div class="pills"><span>Be mindful</span><span>Reduce triggers</span><span>Defuse</span><span>Calm</span><span>Resolve</span></div></div></section>
+<section class="slide"><div class="slide-no">33</div><div class="content"><div class="eyebrow">Video from Maybo Intro Module</div><h1>SAFER</h1><div class="video-wrap"><iframe allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" src="https://player.vimeo.com/video/917449593?title=0&amp;byline=0&amp;portrait=0" title="SAFER"></iframe></div></div></section>
+<section class="slide"><div class="slide-no">34</div><div class="content"><div class="eyebrow">Signal non-aggression</div><h1>Open PALMS™</h1><div class="visual single"><img alt="Open PALMS™" src="assets/updated-slide-31.png"/></div></div></section>
+<section class="slide"><div class="slide-no">35</div><div class="content"><div class="eyebrow">Video from Maybo Intro Module</div><h1>Open Palms</h1><div class="video-wrap"><iframe allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" src="https://player.vimeo.com/video/916013122?title=0&amp;byline=0&amp;portrait=0" title="Open Palms"></iframe></div></div></section>
+<section class="slide"><div class="slide-no">36</div><div class="content"><div class="eyebrow">Environmental factors, options and problem-solving</div><h1>Reduce triggers &amp; resolve</h1><div class="visual single"><img alt="" src="assets/image29.png"/></div></div></section>
+
+<section class="slide"><div class="slide-no">37</div><div class="content"><div class="eyebrow">Understand needs, avoid jargon, protect dignity and check your own state</div><h1>Person-centred &amp; mindful</h1><div class="visual single"><img alt="" src="assets/image30.png"/></div></div></section>
+<section class="slide"><div class="slide-no">38</div><div class="content"><div class="eyebrow">Understand needs, avoid jargon, protect dignity and check your own state</div><h1>Person-centred &amp; mindful</h1><div class="visual single"><img alt="" src="assets/image31.png"/></div></div></section>
+<section class="slide"><div class="slide-no">39</div><div class="content"><div class="eyebrow">Maintain self-control, acknowledge, reassure, listen and check understanding</div><h1>Defuse &amp; calm</h1><div class="visual single"><img alt="" src="assets/image32.png"/></div></div></section>
+<section class="slide"><div class="slide-no">40</div><div class="content"><div class="eyebrow">Maintain self-control, acknowledge, reassure, listen and check understanding</div><h1>Defuse &amp; calm</h1><div class="visual single"><img alt="" src="assets/image33.png"/></div></div></section><section class="slide"><div class="slide-no">41</div><div class="content"><div class="eyebrow">Environmental factors, options and problem-solving</div><h1>Reduce triggers &amp; resolve</h1><div class="visual single"><img alt="" src="assets/image27.png"/></div></div></section>
+<section class="slide"><div class="slide-no">42</div><div class="content"><div class="eyebrow">Video</div><h1>Active Palms video</h1><div class="video-wrap"><iframe allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" src="https://player.vimeo.com/video/256414986?title=0&amp;byline=0&amp;portrait=0" title="Active Palms video"></iframe></div></div></section>
+<section class="slide"><div class="slide-no">43</div><div class="content"><div class="eyebrow">Check understanding</div><h1>Communication</h1><div class="visual single"><img alt="Communication" src="assets/new-comms-model.png"/></div></div></section>
+<section class="slide learning-cycle-slide"><div class="slide-no">44</div><div class="content"><div class="eyebrow">Reflective practice</div><h1>Learning | The Learning</h1><div class="visual single learning-cycle-visual"><img alt="Learning cycle: incident, review, conclusions and learning" src="assets/learning-cycle.png"/></div></div></section>
+
+<section class="slide summary-slide"><div class="slide-no">45</div><div class="content narrow"><div class="eyebrow">Finish</div><h1>Key takeaways</h1><p class="lead">Look behind behaviour. Consider trauma, function, triggers and inhibitors. Regulate your own response. Use calm, person-centred communication and de-escalation strategies.</p><div class="summary-grid"><div><strong>Look behind behaviour</strong><span>Function, trauma, needs and context matter.</span></div><div><strong>Notice escalation early</strong><span>Triggers and inhibitors shape risk.</span></div><div><strong>Regulate your response</strong><span>Attitude and behaviour can influence the cycle.</span></div><div><strong>Use person-centred de-escalation</strong><span>Make space, listen, reassure and check understanding.</span></div></div></div></section>
+</main><div class="brand-mini"><img alt="Maybo" src="assets/maybo-logo.png"/></div><nav aria-label="Slide controls" class="controls"><button aria-label="Previous slide" id="prev">← Previous</button><span class="counter" id="counter"></span><button aria-label="Next slide" id="next">Next →</button></nav><div class="progress" id="progress"></div><script>
+const slides=[...document.querySelectorAll('.slide')], prev=document.getElementById('prev'), next=document.getElementById('next'), counter=document.getElementById('counter'), progress=document.getElementById('progress');
+let index=0;
+function show(i){
+  index=Math.max(0,Math.min(i,slides.length-1));
+  slides.forEach((s,n)=>s.classList.toggle('active',n===index));
+  prev.disabled=index===0; next.disabled=index===slides.length-1;
+  counter.textContent=`${index+1} / ${slides.length}`;
+  progress.style.width=`${((index+1)/slides.length)*100}%`;
+  history.replaceState(null,'',`#slide-${index+1}`);
+}
+prev.addEventListener('click',()=>show(index-1)); next.addEventListener('click',()=>show(index+1));
+document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(index+1)} if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(index-1)} if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1)});
+let startX=null; document.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true}); document.addEventListener('touchend',e=>{if(startX===null)return;let d=e.changedTouches[0].clientX-startX;if(Math.abs(d)>60)show(index+(d<0?1:-1));startX=null},{passive:true});
+const hash=location.hash.match(/slide-(\d+)/); show(hash?Number(hash[1])-1:0);
+</script></body></html>
