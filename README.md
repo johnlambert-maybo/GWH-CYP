@@ -1,4 +1,4 @@
-# Great Western Hospital CYP Workshop — Olivia update
+# Great Western Hospital CYP Workshop — v3 update
 
 Static HTML workshop prepared for GitHub Pages.
 
